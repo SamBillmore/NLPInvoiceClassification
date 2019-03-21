@@ -1,0 +1,5 @@
+*.csv
+__pycache__/
+requirements.txt
+Flask_app.zip
+*.pkl

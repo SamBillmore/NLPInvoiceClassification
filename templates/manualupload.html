@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<section style="background-color:white">
+	<div class="jumbotron">
+		<h1 class="display-4">Manual Upload</h1>
+  <p class="lead">Please fill required information from the face of the invoice and find the classification.</p>
+  <hr class="my-4">
+<div class= "container" style="height:100vh;">
+	<form class="needs-validation" action="{{ url_for('res') }}" method="POST" style="opacity:1.0" >
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<label for="BusinessUnit">BusinessUnit</label>
+				<select id="BusinessUnit" class="form-control" name="BusinessUnit" required>
+					<option selected>Choose...</option>
+					<option>STS</option>
+					<option>AS EAAA</option>
+					<option>E&IS</option>
+				</select>
+			</div>
+			<div class="form-group col-md-4">
+				<label for="SupplierName">SupplierName</label>
+				<input type="text" class="form-control" id="SupplierName" placeholder="SupplierName" name="SupplierName" value="Landmark Information Group Ltd - (CENTRAL)" required>
+			</div>
+			<div class="form-group col-md-4">
+				<label for="SupplierGroup">SupplierGroup</label>
+				<input type="text" class="form-control" id="SupplierGroup" placeholder="SupplierGroup" name="SupplierGroup" value="Landmark Information Group Ltd - (CENTRAL)" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="InvoiceDescription">InvoiceDescription</label>
+			<input type="textarea" class="form-control" id="InvoiceDescription" placeholder="Enter Invoice Description" name="InvoiceDescription" value="Mill Hill Envirocheck report inc service plans" required>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-5">
+				<label for="ProjectOwningOrg">Project Owning Org</label>
+				<input type="text" class="form-control" id="ProjectOwningOrg" name="ProjectOwningOrg" value="385" required>
+			</div>
+			<div class="form-group col-md-5">
+				<label for="DataSource">Data Source</label>
+				<input type="text" class="form-control" id="DataSource" name="DataSource" value="Invoices_20180731" required>
+			</div>
+			<div class="form-group col-md-2">
+				<label for="InvoiceCurrency">InvoiceCurrency</label>
+				<select id="InvoiceCurrency" class="form-control" name="InvoiceCurrency" required>
+					<option selected>Choose...</option>
+					<option>GBP</option>
+					<option>USD</option>
+				</select>
+			</div>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-3">
+					<label for="Legacy">Legacy</label>
+					<select id="Legacy" class="form-control" name="Legacy" required>
+						<option selected>Choose...</option>
+						<option>AFW</option>
+						<option>WG</option>
+					</select>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="LeakageGroup">Leakage Group</label>
+					<select id="LeakageGroup" class="form-control" name="LeakageGroup" required>
+						<option selected>Choose...</option>
+						<option>Non-Leakage</option>
+						<option>WIS</option>
+						<option>WFS</option>
+					</select>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="InvoiceAmount">Invoice Amount</label>
+					<input type="number" step="0.000001" class="form-control" id="InvoiceAmount" placeholder="InvoiceAmount" name="InvoiceAmount" value="450" required>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="USDAmount">USD Amount</label>
+					<input type="number" step="0.0001" class="form-control" id="USDAmount" placeholder="USDAmount" name="USDAmount" value="617.0625" required>
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-3">
+					<label for="Leakageflag">Leakage flag</label>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="Leakageflag" id="Leakageflag1" value="Leakage" required>
+  					<label class="form-check-label" for="Leakageflag1">Leakage</label>
+					</div>
+					<div class="form-check ">
+  					<input class="form-check-input" type="radio" name="Leakageflag" id="Leakageflag2" value="Non-Leakage" required>
+  					<label class="form-check-label" for="Leakageflag2">Non Leakage</label>
+					</div>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="Intercompanyflag">Intercompany flag</label>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="Intercompanyflag" id="Intercompanyflag1" value="intercompany" required>
+  					<label class="form-check-label" for="Intercompanyflag1">InterCompany</label>
+					</div>
+					<div class="form-check ">
+  					<input class="form-check-input" type="radio" name="Intercompanyflag" id="Intercompanyflag2" value="Non-intercompany" required>
+  					<label class="form-check-label" for="Intercompanyflag2">Non InterCompany</label>
+					</div>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="AmericasFlag">Americas Flag</label>
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="AmericasFlag" id="AmericasFlag0" value="0" required>
+  					<label class="form-check-label" for="AmericasFlag0">0</label>
+					</div>
+					<div class="form-check ">
+  					<input class="form-check-input" type="radio" name="AmericasFlag" id="AmericasFlag1" value="1" required>
+  					<label class="form-check-label" for="AmericasFlag1">1</label>
+					</div>
+				</div>
+				<div class="form-group col-md-3">
+					<label for="Year">Year</label>
+					<select id="Year" class="form-control" name="Year" required>
+						<option selected>Choose...</option>
+						<option>2012</option>
+						<option>2013</option>
+						<option>2014</option>
+						<option>2015</option>
+						<option>2016</option>
+						<option>2017</option>
+						<option>2018</option>
+						<option>2019</option>
+						<option>2020</option>
+						<option>2021</option>
+						<option>2022</option>
+						<option>2023</option>
+						<option>2024</option>
+						<option>2025</option>
+					</select>
+				</div>
+			</div>
+
+		<button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+</div>
+</section>
+<!-- /Banner -->
+
+
+{% endblock %}

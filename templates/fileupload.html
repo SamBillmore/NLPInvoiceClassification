@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<section style="background-color:white">
+<!-- /Banner -->
+{% for mess in get_flashed_messages() %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  {{mess}}
+</div>
+{% endfor %}
+
+<div class="jumbotron" style="height:100vh;">
+  <h1 class="display-4">File Upload</h1>
+  <p class="lead">Please upload the csv file</p>
+  <hr class="my-4">
+  <p>columns should be in below order</p>
+	<p>BusinessUnit,SupplierNumber,SupplierName,SupplierGroup,InvoiceDate,InvoiceDescription,InvoiceCurrency,
+		ProjectOwningOrg,DataSource,Legacy,LeakageGroup,LeakageIdentifier,IntercompanyFlag,InvoiceAmount,USDAmount,
+		Year,AmericasFlag,ReportingDate
+</p>
+<form  method="POST" style="opacity:1.0" enctype='multipart/form-data'>
+<div class="form-group">
+	<label for="file">Upload File</label>
+	<input type="file" class="form-control-file" id="file" name='file' >
+</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</section>
+{% endblock %}

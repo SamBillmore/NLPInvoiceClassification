@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<section style="background-color:white">
+	<div class="jumbotron" style="height:100vh;">
+		<h1 class="display-4">DB Upload</h1>
+  <p class="lead">Please fill required DB information to fetch the data from DB.</p>
+  <hr class="my-4">
+<div class= "container">
+	<form action="{{ url_for('dbres') }}" method="POST" style="opacity:1.0">
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<label for="HostName">HostName</label>
+				<input type="text" class="form-control" id="HostName" placeholder="HostName" name="HostName" required>
+			</div>
+			<div class="form-group col-md-4">
+				<label for="UserName">UserName</label>
+				<input type="text" class="form-control" id="UserName" placeholder="UserName" name="UserName" required>
+			</div>
+			<div class="form-group col-md-4">
+				<label for="Password">Password</label>
+				<input type="text" class="form-control" id="Password" placeholder="Password" name="Password" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="Query_TableName">Query/TableName</label>
+			<input type="textarea" class="form-control" id="Query_TableName" placeholder="Query/TableName" name="Query_TableName" required>
+		</div>
+		<button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
+</div>
+</section>
+<!-- /Banner -->
+
+
+{% endblock %}

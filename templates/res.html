@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section style="background-color:white">
+<div class="jumbotron" >
+  <h1 class="display-4">Prediction</h1>
+  <br>
+  <p class="lead">Predicted Category : {{ result_pred['PREDICTED CATEGORY']}}</p>
+  <p class="lead">Predicted Certainity : {{ result_pred['CERTAINTY']}}%</p>
+  <hr class="my-4">
+  <p>List of probabilities for classes</p>
+  <table class="table table-striped" style="height:100vh;">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Category</th>
+      <th scope="col">Certainity</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for val in tuple_array %}
+    <tr>
+      <th scope="row"> {{ val[0] }} </th>
+      <td> {{ val[1] }} </td>
+      <td> {{ val[2] }}% </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</section>
+{% endblock %}

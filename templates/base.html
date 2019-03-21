@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<!--
+	Ex Machina by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Automated Invoice Classification</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="../static/js/skel.min.js"></script>
+		<script src="../static/js/skel-panels.min.js"></script>
+		<script src="../static/js/init.js"></script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/skel-noscript.css')}}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style-desktop.css')}}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/WGStyle.css')}}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">
+			  <img src="../static/images/Ey_Small_Logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
+			</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="{{ url_for('page') }}">Home <span class="sr-only">(current)</span></a>
+		      </li>
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ url_for('manualupload') }}">Manual Upload <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ url_for('fileupload') }}">File Upload <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ url_for('dbupload') }}">DB Upload <span class="sr-only">(current)</span></a>
+					</li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+		    </form>
+		  </div>
+		</nav>
+
+	<!-- Header -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand"  href="{{ url_for('page') }}">
+	    <h2><b>Automated Invoice Classification</b></h2>
+	  </a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+
+			</ul>
+			 <div class="justify-content-end">
+			<table class="table table-sm table-bordered my-2 my-lg-0 mr-sm-0 ">
+		 <thead>
+			<tr>
+				<th scope="col"><b>Model Version :</b> 3.2</th>
+				<th scope="col"><b>Model Accuracy :</b> 94.4%</th>
+				<th scope="col"><b>Client :</b> Wood Group</th>
+				<th scope="col"><b>Last Trained :</b> 17/02/2019</th>
+			</tr>
+		 </thead>
+		 </table>
+	 </div>
+		</div>
+	</nav>
+	<!-- Header -->
+
+	<!-- Banner -->
+
+
+<div style="height: 200px; background-color: white ;">
+  <img src="../static/images/banner.jpg" style="width:100%;height:250px;" alt="Responsive image">
+</div>
+
+{% block content %}
+
+{% endblock %}
+
+
+	</body>
+</html>

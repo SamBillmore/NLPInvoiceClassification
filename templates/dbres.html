@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section style="background-color:white">
+<div class="jumbotron" style="height:100vh;">
+  <h1 class="display-4">Prediction</h1>
+  <br>
+  <p class="lead">Your file with predicted invoice class is ready for download!</p>
+  <hr class="my-4">
+  <p>Please click on below button to download the file</p>
+
+  <a href="../results/Test_data_for_flask_app.csv" download>
+  <button type="button" class="btn btn-warning">Download</button>
+</a>
+
+</div>
+</section>
+{% endblock %}
